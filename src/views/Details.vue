@@ -15,7 +15,7 @@
             class="col-12"
             style="text-align: center !important; filter: drop-shadow(0px 17.1555px 28.5926px rgba(31, 36, 75, 0.25)); margin-top: -50px"
           >
-            <img :src="`http://openweathermap.org/img/wn/${iconw}@2x.png`" width="45%" alt="" />
+            <img :src="`https://openweathermap.org/img/wn/${iconw}@2x.png`" width="45%" alt="" />
           </div>
         </div>
         <div class="row">
@@ -64,11 +64,11 @@
           <div class="smallcard">
             <div class="row">
               <div class="col-3" style="font-size: 2rem">
-                <i class="fas fa-thermometer-three-quarters"></i>
+                <i class="fas fa-wind"></i>
               </div>
               <div class="col-7">
-                {{ temp + "\u00B0" }}
-                {{ selectedMapOption }}
+                {{ windspeed.toFixed(0) + " m/s" }}
+                windspeed
               </div>
             </div>
           </div>
@@ -77,11 +77,11 @@
           <div class="smallcard">
             <div class="row">
               <div class="col-3" style="font-size: 2rem">
-                <i class="fas fa-thermometer-three-quarters"></i>
+                <i class="fas fa-cloud-rain"></i>
               </div>
               <div class="col-7">
-                {{ temp + "\u00B0" }}
-                {{ selectedMapOption }}
+                {{ humidity + "%" }}
+                Humidity
               </div>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default {
     async getWeatherCurrentLocation() {
       await this.axios
         .get(
-          "http://api.openweathermap.org/data/2.5/weather?lat=" +
+          "https://api.openweathermap.org/data/2.5/weather?lat=" +
             this.latitude +
             "&lon=" +
             this.longitude +

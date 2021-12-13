@@ -37,7 +37,7 @@
           </div>
 
           <div class="col-6" style="text-align: right !important">
-            <img :src="`http://openweathermap.org/img/wn/${iconw}@2x.png`" width="60%" alt="" />
+            <img :src="`https://openweathermap.org/img/wn/${iconw}@2x.png`" width="60%" alt="" />
           </div>
         </div>
         <div class="row">
@@ -147,7 +147,7 @@ export default {
     async getWeatherCurrentLocation() {
       await this.axios
         .get(
-          "http://api.openweathermap.org/data/2.5/weather?lat=" +
+          "https://api.openweathermap.org/data/2.5/weather?lat=" +
             this.latitude +
             "&lon=" +
             this.longitude +
